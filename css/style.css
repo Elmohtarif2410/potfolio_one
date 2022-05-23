@@ -72,6 +72,8 @@ ul {list-style: none}
     margin-bottom: 30px
 }
 
+/* Start Buttons Action Page */
+
 .top-page {
     position: fixed;
     bottom: 70px;
@@ -118,14 +120,31 @@ ul {list-style: none}
     bottom: -14px;
 }
 
+#languge {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    background-color: #f00;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 8px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* End Buttons Action Page */
+
         /* Start landing */
 
 .landing {
-    background-image: url(../images/landing.jpg);
+    background-image: url(../images/landing-1.jpg);
     background-size: cover;
     background-position-X: center;
     position: relative;
-    height: calc(100vh - 62px)
+    height: calc(100vh - 62px);
+    transition: 1s;
 }
 
 .landing::after {
@@ -191,8 +210,7 @@ ul {list-style: none}
     cursor: pointer
 }
 
-.landing ul li:hover,
-.landing ul li:first-child {background-color: var(--white)}
+.landing ul li.active {background-color: var(--white)}
 
 @media (max-width: 767px) {
     .landing .text h1 {font-size: 24px}
@@ -232,6 +250,7 @@ header .logo h3 {
     text-transform: UPPERCASE;
     font-size: 22px;
     margin-left: 10px;
+    margin-right: 10px; /* becouse page right to left */
 }
 
 header .logo h3 span {
@@ -266,8 +285,11 @@ header nav i.click + ul li {
     font-size: 18px;
     border-bottom: 1px solid;
     padding-left: 10px;
+    padding-right: 10px; /* becouse page right to left */
     color: var(--white)
 }
+
+header nav i.click + ul li a:hover {color: var(--nav-color) }
 
 header nav i.click + ul li:last-of-type {border: none}
 
@@ -399,7 +421,7 @@ header nav ul li a:hover {
     .about-me .container .text .main-heading p {text-align: center}
     .about-me .container .content {grid-template-columns: none}
     .about-me .container .content section {display: unset}
-    .about-me .container section i {margin: 0 0 15px 0}
+    .about-me .container section i {margin: 0 0 15px 0 !important}
 }
 
         /* End About Me  */
@@ -677,8 +699,7 @@ header nav ul li a:hover {
     cursor: pointer
 }
 
-.testmonials ul li.active,
-.testmonials ul li:hover {
+.testmonials ul li.active {
     background-color: var(--main-color);
 }
 
