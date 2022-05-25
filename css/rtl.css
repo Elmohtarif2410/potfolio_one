@@ -23,48 +23,27 @@ header nav i.click + ul {
     transform: translateX(-50%);
 }
 
+/* testmonials  */
+.testmonials blockquote::before {
+    content: "\f10e";
+    transform: translate(15px, -5px)
+}
+
+.testmonials blockquote::after {
+    content: '\f10d';
+    transform: translate(-4px, -4px)
+}
+
 /* Portfolio */
 .portfolio h2::before {
     transform: translateX(-20%);
-}
-
-
-.portfolio .projects section {
-    margin-right: 0;
-    margin-left: 15px;
-}
-
-.portfolio .projects section:nth-of-type(3),
-.portfolio .projects section:nth-of-type(6),
-.portfolio .projects section:nth-of-type(9) {margin-left: 0}
-
-
-@media (max-width: 991px) {
-    .portfolio .projects section {
-        margin-right: 0;
-        margin-left: 15px;
-    }
-
-    .portfolio .projects section:nth-of-type(2),
-    .portfolio .projects section:nth-of-type(4),
-    .portfolio .projects section:nth-of-type(6) {margin-left: 0}
-
-    .portfolio .projects section:nth-of-type(3) {margin-left: 15px; margin-right: 0}
-}
-
-@media (max-width: 767px) {
-    .portfolio .projects section {
-        margin-left: 0;
-    }
-
-    .portfolio .projects section:nth-of-type(3) {margin-left: 0}
 }
 
 .portfolio .projects section .text {text-align: right}
 
 
 /* Button Top Page */
-.top-page span:last-child {transform: translate(-15px, 21px)}
+.top-page span:last-child {transform: translate(-16px, 21px)}
 
 /* Button languge */
 #languge {

@@ -71,6 +71,7 @@ let anmation = document.querySelectorAll(".skills section.progress div span"),
     body = document.querySelector("body");
 
 window.onscroll = function () {
+    // function button scroll top page
     if (window.scrollY >= 700) {
         topPage.style.opacity = "1";
         topPage.style.display = "block";
@@ -79,7 +80,9 @@ window.onscroll = function () {
         topPage.style.display = "none";
     }
 
+    // Anmiation to Skills section
     if (body.scrollWidth > 1200) {
+        console.log("test")
         if (window.scrollY >= 1300) {
             anmation[0].style.animation = "progress ease-in-out 1.5s running";
             anmation[1].style.animation = "progress ease-in-out 1.5s running";
@@ -111,12 +114,18 @@ window.onscroll = function () {
 
 // Functionalty for onclick buttons
 let icon = document.getElementById("icon"),
+    logo = document.querySelector("header .logo"),
     buttonScills = document.querySelector(".skills .container section.content button "),
     bottonLearnMore = document.querySelector(".landing .text button"),
-    bottonDownloadResume = document.querySelector(".resume button");
+    bottonDownloadResume = document.querySelector(".resume button"),
+    portfolioButtonMore = document.querySelector(".portfolio button");
 
 icon.onclick = function () {
     icon.classList.toggle("click");
+};
+
+logo.onclick = function () {
+    open("#home", "_self");
 };
 
 topPage.onclick = function () {
@@ -139,17 +148,65 @@ bottonDownloadResume.onclick = function () {
     open("");
 }
 
+portfolioButtonMore.onclick = function () {
+    if (this.textContent === "more") {
+        document.querySelector(".portfolio .projects").style.maxHeight = "unset";
+        this.textContent = "less";
+    } else {
+        document.querySelector(".portfolio .projects").style.maxHeight = "750px";
+        this.textContent = "more";
+    }
+}
+
+// functionalty Buttons Action Page
+
+// functionalty portflio category
+let category = document.querySelectorAll(".portfolio ul li"),
+    projectCategory = document.querySelectorAll(".portfolio .projects section .text span");
+
+for (c = 1; c < category.length; c++) {
+    category[c].onclick = function () {
+        //remove class active of category
+        for (i = 0; i < category.length; i++) {
+            category[i].classList.remove("active");
+        }
+        // add class active for this category
+        this.classList.add("active");
+
+        // restet section projets
+        for (p = 0; p < projectCategory.length; p++) {
+            projectCategory[p].parentElement.parentElement.style.display = "block";
+        }
+    
+        // shfile projects
+        categoryName = this.textContent; // varible to content this category
+        // loop delete section projects when click this category
+        for (i = 0; i < projectCategory.length; i++) {
+            projectCategoryName = projectCategory[i].textContent;
+            if (categoryName != projectCategoryName) {
+                projectCategory[i].parentElement.parentElement.style.display = "none";
+            }
+        }
+    }
+}    
+
+// function to click All projects
+category[0].onclick = function () {
+    // restet section projets
+    for (p = 0; p < projectCategory.length; p++) {
+        projectCategory[p].parentElement.parentElement.style.display = "block";
+    }
+    // remove class active of category
+    for (i = 0; i < category.length; i++) {
+        category[i].classList.remove("active");
+    }
+    // add class active for this category
+    this.classList.add("active");
+}
+
+
 
 // Functionalty of open method to projects
-var project_1 = document.querySelector("#project-1"),
-    project_2 = document.querySelector("#project-2"),
-    project_3 = document.querySelector("#project-3"),
-    project_4 = document.querySelector("#project-4"),
-    project_5 = document.querySelector("#project-5"),
-    project_6 = document.querySelector("#project-6"),
-    project_7 = document.querySelector("#project-7"),
-    project_8 = document.querySelector("#project-8"),
-    project_9 = document.querySelector("#project-9");
 
 project_1.onclick = function () {
     open("");
@@ -176,5 +233,14 @@ project_8.onclick = function () {
     open("");
 };
 project_9.onclick = function () {
+    open("");
+};
+project_10.onclick = function () {
+    open("");
+};
+project_11.onclick = function () {
+    open("");
+};
+project_12.onclick = function () {
     open("");
 };
