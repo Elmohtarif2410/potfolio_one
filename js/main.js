@@ -1,4 +1,6 @@
-// Functionalty of slide to landaing
+/****************************************************************************
+********************* Functionalty of slide to landaing *********************
+****************************************************************************/
 let landing = document.querySelector(".landing"),
     landingButton = document.querySelectorAll(".landing ul li");
 
@@ -30,7 +32,9 @@ landingButton[2].onclick = function () {
 }
 
 
-// Functionalty of slide to Testmonials
+/****************************************************************************
+********************* Functionalty of slide to Testmonials ******************
+****************************************************************************/
 let quote = document.querySelector(".testmonials blockquote"),
     nameQuote = document.querySelector(".testmonials h3"),
     testmonialsButton = document.querySelectorAll(".testmonials ul li");
@@ -66,7 +70,9 @@ testmonialsButton[2].onclick = function () {
 }
 
 
-// functionalty of Anmition
+/****************************************************************************
+************************** functionalty of Anmition *************************
+****************************************************************************/
 let anmation = document.querySelectorAll(".skills section.progress div span"),
     body = document.querySelector("body");
 
@@ -112,7 +118,9 @@ window.onscroll = function () {
 };
 
 
-// Functionalty for onclick buttons
+/****************************************************************************
+********************* Functionalty for onclick buttons **********************
+****************************************************************************/
 let icon = document.getElementById("icon"),
     logo = document.querySelector("header .logo"),
     buttonScills = document.querySelector(".skills .container section.content button "),
@@ -158,8 +166,10 @@ portfolioButtonMore.onclick = function () {
     }
 }
 
-// functionalty Buttons Action Page
-
+/****************************************************************************
+********************* functionalty Buttons Action Page **********************
+*(************************* functionalty portflio ***************************
+****************************************************************************/
 // functionalty portflio category
 let category = document.querySelectorAll(".portfolio ul li"),
     projectCategory = document.querySelectorAll(".portfolio .projects section .text span");
@@ -189,7 +199,6 @@ for (c = 1; c < category.length; c++) {
         }
     }
 }    
-
 // function to click All projects
 category[0].onclick = function () {
     // restet section projets
@@ -204,10 +213,9 @@ category[0].onclick = function () {
     this.classList.add("active");
 }
 
-
-
-// Functionalty of open method to projects
-
+/****************************************************************************
+****************** Functionalty of open method to projects ******************
+****************************************************************************/
 project_1.onclick = function () {
     open("");
 };
