@@ -209,7 +209,8 @@ ul {list-style: none}
     border-radius: 50%;
     border: 1px solid var(--white);
     margin-bottom: 8px;
-    cursor: pointer
+    cursor: pointer;
+    transition: var(--transition-delay)
 }
 
 .landing ul li.active {background-color: var(--white)}
@@ -696,7 +697,8 @@ header nav ul li a:hover {
     border: 1px solid var(--main-color);
     border-radius: 50%;
     margin-right: 10px;
-    cursor: pointer
+    cursor: pointer;
+    transition: var(--transition-delay)
 }
 
 .testmonials ul li.active {
@@ -762,7 +764,8 @@ header nav ul li a:hover {
     text-transform: uppercase;
     color: var(--heading-color);
     font-weight: bold;
-    cursor: pointer
+    cursor: pointer;
+    transition: var(--transition-delay)
 }
 
 .portfolio ul li.active,
@@ -786,6 +789,7 @@ header nav ul li a:hover {
     cursor: pointer;
     overflow: hidden;
     margin: 5px;
+    transition: 1s;
 }
 
 .portfolio .projects section:hover .text {opacity: unset}

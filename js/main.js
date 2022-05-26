@@ -193,7 +193,7 @@ for (c = 1; c < category.length; c++) {
         // loop delete section projects when click this category
         for (i = 0; i < projectCategory.length; i++) {
             projectCategoryName = projectCategory[i].textContent;
-            if (categoryName != projectCategoryName) {
+            if (!projectCategoryName.includes(categoryName)) {
                 projectCategory[i].parentElement.parentElement.style.display = "none";
             }
         }
