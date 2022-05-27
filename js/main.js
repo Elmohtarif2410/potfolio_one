@@ -144,6 +144,11 @@ topPage.onclick = function () {
     })
 }
 
+// send to Arbic page
+languge.onclick = function () {
+    open("arbic.html", "_self")
+}
+
 buttonScills.onclick = function () {
     open("#contact", "_self");
 }
