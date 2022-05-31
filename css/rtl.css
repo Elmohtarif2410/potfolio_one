@@ -1,3 +1,8 @@
+/* body */
+body {
+    font-family: 'Tajawal', sans-serif, Tahoma, Verdana;
+}
+
 /* Header */
 header nav i.click + ul {
     right: auto;
