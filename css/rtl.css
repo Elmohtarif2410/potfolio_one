@@ -41,7 +41,7 @@ header nav i.click + ul {
 
 /* Portfolio */
 .portfolio h2::before {
-    transform: translateX(-12%);
+    transform: translateX(-30%);
 }
 
 .portfolio .projects section .text {text-align: right}
