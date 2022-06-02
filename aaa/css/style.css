@@ -1,0 +1,1007 @@
+        /* Glopal Rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+:root {
+    --main-color: #00bcd4;
+    --back-color: #f2f2f2;
+    --text-color: #aeaeae;
+    --white: #f1f8f5;
+    --nav-color: #252f31;
+    --footer-color: #191e22;
+    --heading-color: #586567;
+    --transition-delay: .4s;
+    --main-padding: 60px
+}
+
+body {
+    font-family:'Work Sans', sans-serif, Tahoma, Verdana;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@media (min-width: 768px) {
+    .container {width: 750px}
+}
+
+@media (min-width: 992px) {
+    .container {width: 970px}
+}
+
+@media (min-width: 1200px) {
+    .container {width: 1170px}
+}
+
+button {
+    border: none;
+    background: none
+}
+
+button:focus {
+    outline: none
+}
+
+ul {list-style: none}
+
+
+/* conpounat */
+
+.main-heading h2 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--heading-color)
+}
+
+.main-heading p {
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 30px
+}
+
+/* Start Buttons Action Page */
+
+.top-page {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    animation: top-bottom var(--transition-delay) ease-out infinite alternate;
+    cursor: pointer;
+    display: none
+}
+
+@keyframes top-bottom {
+    from {
+        transform: translateY(12px);
+    }
+}
+
+.top-page span:first-child {
+    border: 22px solid;
+    border-color: transparent transparent var(--main-color) transparent;
+}
+
+.top-page span:last-child { 
+    display: block;
+    width: 12px;
+    height: 20px;
+    background: var(--main-color);
+    transform: translate(15px, 21px);
+    position: relative;
+}
+
+.top-page span:last-child::before {
+    content: "";
+    width: 12px;
+    height: 4px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -7px;
+}
+
+.top-page span:last-child::after {
+    content: "";
+    width: 12px;
+    height: 4px;
+    background: var(--main-color);
+    position: absolute;
+    bottom: -14px;
+}
+
+#languge {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    background-color: #f00;
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 8px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* End Buttons Action Page */
+
+/* ************************************************************
+************************ Start Styling ************************
+************************************************************ */
+
+
+    /* Start Header */
+
+header {
+    background-color: var(--nav-color);
+    color: var(--white);
+    padding: 15px 0
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer
+}
+
+header .logo img {
+    width: 32px;
+    padding: 1px;
+    background-color: var(--white);
+    border-radius: 50%
+}
+
+header .logo h3 {
+    text-transform: UPPERCASE;
+    font-size: 22px;
+    margin-left: 10px;
+    margin-right: 10px; /* becouse page right to left */
+}
+
+header .logo h3 span {
+    color: var(--main-color);
+    text-transform: lowercase;
+    font-size: 24px;
+}
+
+header nav i {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+header nav i.click + ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 280px;
+    background: var(--main-color);
+    z-index: 2;
+}
+
+header nav i.click + ul li {
+    margin: 0;
+    padding-bottom: 12%;
+    font-size: 18px;
+    border-bottom: 1px solid;
+    padding-left: 10px;
+    padding-right: 10px; /* becouse page right to left */
+    color: var(--white)
+}
+
+header nav i.click + ul li a:hover {color: var(--nav-color) }
+
+header nav i.click + ul li:last-of-type {border: none}
+
+header nav ul {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+header nav ul li {
+    margin-left: 15px;
+}
+
+header nav ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-delay);
+}
+
+header nav ul li a:hover {
+    color: var(--main-color);
+}
+
+@media (min-width: 992px) {
+    header nav i#icon {display: none}
+}
+
+@media (max-width: 991px) {
+    header nav ul {display: none}
+}
+
+        /* End Header */
+
+        /* Start landing */
+
+.landing {
+    background-image: url(../images/landing-1.jpg);
+    background-size: cover;
+    background-position-X: center;
+    background-color: var(--back-color);
+    position: relative;
+    height: calc(100vh - 62px);
+    transition: 1s
+}
+
+.landing::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, .4)
+}
+
+.landing .container {
+    position: relative;
+    height: 100%;
+    z-index: 1
+}
+
+.landing .text {
+    width: fit-content;
+    max-width: 100%;
+    text-align: center;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase
+}
+
+.landing .text h1 {
+    padding: 5px 5px;
+    border-top: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    font-size: 40px;
+    margin-bottom: 25px
+}
+
+.landing .text button {
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1
+}
+
+.landing ul {
+    position: absolute; 
+    bottom: 30px;
+    right: 20px;
+}
+
+.landing ul li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: var(--transition-delay)
+}
+
+.landing ul li.active {background-color: var(--white)}
+
+@media (max-width: 767px) {
+    .landing .text h1 {font-size: 24px}
+    .landing .text button {padding: 8px 15px}
+}
+    
+        /* End landing */
+
+        /* Start My Values */
+
+.my-values {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding)
+}
+
+.my-values .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+    gap: 35px;
+    align-items: center;
+    text-align: center
+}
+
+.my-values .container section i {
+    font-size: 42px;
+    color: var(--main-color)
+}
+
+.my-values .container section h3 {
+    margin: 25px;
+    text-transform: uppercase;
+    color: var(--heading-color)
+}
+
+.my-values .container section p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+        /* End My Values */
+
+        /* Start About Me  */
+.about-me {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    background-color: var(--back-color);
+}
+
+.about-me .container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-me .container img {
+    background-color: var(--text-color);
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover
+}
+
+.about-me .container .text {
+    width: 62%;
+}
+
+.about-me .container .text p {color: #919191}
+
+.about-me .container .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+    row-gap: 30px;
+}
+
+.about-me .container .content section {
+    display: flex;
+}
+
+.about-me .container section i {
+    font-size: 28px;
+    color: var(--main-color);
+    margin-right: 15px;
+    margin-top: 12px;
+}
+
+.about-me .container section h3 {
+    color: var(--heading-color);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.about-me .container section p {
+    color: var(--heading-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+    .about-me .container img {display: none}
+    .about-me .container .text {width: 100%; text-align: center}
+    .about-me .container .text .main-heading p {text-align: center}
+    .about-me .container .content {grid-template-columns: none}
+    .about-me .container .content section {display: unset}
+    .about-me .container section i {margin: 0 0 15px 0 !important}
+}
+
+        /* End About Me  */
+
+        /* Start My Skills */
+
+.skills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding)
+}
+
+.skills .container {
+    display: flex;
+    justify-content: space-between
+}
+
+.skills .container section {flex-basis: 45%}
+
+.skills .container section.content button{
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.skills .container section.progress {
+    margin-top: 28px;
+}
+
+.skills .container section.progress h3 {
+    color: var(--heading-color);
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.skills section.progress div {
+    height: 30px;
+    background: #f2f2f1;
+    margin-bottom: 30px;
+}
+
+.skills section.progress div span {
+    display: block;
+    height: 30px;
+    background: var(--main-color);
+    position: relative;
+    animation: progress ease-in-out 1.5s paused;
+}
+
+@keyframes progress {
+    from {
+        width: 0
+    }
+}
+
+.skills section.progress div span::before {
+    content: attr(data-progress);
+    position: absolute;
+    right: 0;
+    top: -37px;
+    transform: translateX(50%);
+    background-color: var(--nav-color);
+    color: var(--white);
+    padding: 4px 5px;
+    font-size: 14px;
+    border-radius: 2px
+}
+
+.skills section.progress div span::after {
+    content: "";
+    position: absolute;
+    top: -14px;
+    right: 0;
+    transform: translateX(50%);
+    border: 8px solid;
+    border-color: var(--nav-color) transparent transparent transparent;
+}
+
+@media (max-width: 991px) {
+    .skills .container section {flex-basis: 47%}
+}
+
+@media (max-width: 767px) {
+    .skills .container {display: unset}
+    .skills .container section {
+        width: 85%;
+        margin: auto;
+    }
+
+    .skills .container section:first-of-type {
+        margin-bottom: 60px;
+    }
+}
+        /* End My Skills */
+
+        /* Start Resume */
+
+.resume {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    text-align: center;
+    background-image: url(../images/resume.png);
+    background-size: cover;
+    background-position: center;
+    background-color: var(--back-color);
+}
+
+.resume h2 {
+    text-transform: uppercase;
+    color: var(--nav-color);
+    margin-bottom: 30px
+}
+
+.resume p {
+    color: var(--heading-color);
+    line-height: 1.6;
+    margin-bottom: 30px
+}
+
+.resume button {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 10px 25px;
+    cursor: pointer
+}
+        /* End Resume */
+
+           /* Start cv */
+
+.cv {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding)
+}
+
+.cv article {
+    display: grid;
+    grid-template-columns: repeat(2, 47%);
+    column-gap: 6%;
+}
+
+.cv article .content {margin-top: 58px}
+
+.cv article section:not(:last-of-type) {
+    margin-bottom: 80px;
+}
+
+.cv article section h3 {
+    text-transform: uppercase;
+    color: var(--heading-color);
+    margin-bottom: 20px
+}
+
+.cv article section p:first-of-type{
+    text-transform: capitalize;
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 20px
+}
+
+.cv article section span {
+    display: block;
+    width: fit-content;
+    background: var(--main-color);
+    color: var(--white);
+    font-weight: bold;
+    padding: 12px;
+    line-height: 1;
+}
+
+.cv article section hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: none;
+    height: 1px;
+    background: var(--text-color)
+}
+
+.cv article section p:last-of-type {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* break from Articles  */
+.cv .container > hr {
+    border: none;
+    height: 1px;
+    background: var(--text-color);
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+    .cv article {display: block}
+}
+
+        /* End cv */
+
+        /* Start testmonials */
+
+.testmonials {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(../images/quote.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: var(--back-color);
+    text-align: center;
+    position: relative
+}
+
+.testmonials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 250, 250, .15);
+}
+
+.testmonials .container {position: relative; z-index: 1;}
+
+.testmonials blockquote {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 18px;
+    margin-bottom: 30px;
+    position: relative
+}
+
+.testmonials blockquote::before {
+    font-family: "Font Awesome 6 Free";
+    content: '\f10d';
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    transform: translate(-15px, -5px)
+}
+
+.testmonials blockquote::after {
+    content: "\f10e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    transform: translate(4px, -4px)
+}
+
+.testmonials h3 {
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.testmonials ul {
+    display: flex;
+    justify-content: center
+}
+
+.testmonials ul li {
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: var(--transition-delay)
+}
+
+.testmonials ul li.active {
+    background-color: var(--main-color);
+}
+
+        /* End testmonials */
+
+        /* Start Portfolio */
+
+.portfolio {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    text-align: center;
+}
+
+.portfolio h2 {
+    text-transform: uppercase;
+    color: var(--heading-color);
+    margin: 0 auto 60px;
+    font-size: 28px;
+    position: relative;
+    width: fit-content;
+}
+
+.portfolio h2::before {
+    content: "";
+    width: 120px;
+    height: 2px;
+    background: var(--heading-color);
+    position: absolute;
+    bottom: -30px;
+    transform: translateX(15%)
+}
+
+.portfolio h2::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--heading-color);
+    background: #fff;
+    position: absolute;
+    bottom: -35px;
+    left: 43%
+}
+
+.portfolio .container > p {
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 60px
+}
+
+.portfolio ul {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto 30px;
+}
+
+.portfolio ul li {
+    padding: 8px 15px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-delay)
+}
+
+.portfolio ul li.active,
+.portfolio ul li:hover {
+    background-color: var(--main-color);
+    color: var(--white)
+}
+
+.portfolio .projects {
+    max-height: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: hidden
+}
+
+.portfolio .projects section {
+    background-color: var(--back-color);
+    width: calc(33.3333% - 10px);
+    height: 240px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 5px;
+    transition: 1s;
+}
+
+.portfolio .projects section:hover .text {opacity: unset}
+
+.portfolio .projects section:hover img {
+    transform: scale(1.3) rotate(5deg);
+}
+
+.portfolio .projects section img {
+    width: 100%;
+    height: 100%;
+    transition: var(--transition-delay);
+}
+
+.portfolio .projects section .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    text-align: left;
+    padding: 25px;
+    opacity: 0;
+    transition: var(--transition-delay)
+}
+
+.portfolio .projects section .text h3 {
+    text-transform: capitalize;
+    color: var(--nav-color);
+    margin-bottom: 8px
+}
+
+.portfolio .projects section .text span {
+    color: var(--main-color)
+}
+
+.portfolio button {
+    margin-top: 30px;
+    text-transform: UPPERCASE;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 10px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1
+}
+
+@media (max-width: 991px) {
+    .portfolio .projects section {width: calc(50% - 10px)}
+}
+
+@media (max-width: 767px) {
+
+    .portfolio ul li {
+        font-size: 13px;
+        margin-left: 0;
+        padding: 5px
+    }
+
+    .portfolio .projects {justify-content: center}
+
+    .portfolio .projects section {width: 90%}
+}
+
+        /* End Portfolio */
+
+        /* Start Contact Me */
+.contact-me {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--nav-color)
+}
+
+.contact-me .container {
+    display: grid;
+    grid-template-columns: repeat(2, 47%);
+    gap: 6%
+}
+
+.contact-me section .main-heading h2 {color: var(--white)}
+.contact-me section .main-heading p:last-of-type {text-transform: capitalize}
+
+.contact-me section > p:only-of-type {
+    line-height: 1.6;
+    color: var(--text-color)
+}
+
+.contact-me section > p:only-of-type span {
+    color: var(--white);
+    text-transform: capitalize
+}
+
+.contact-me form {margin-top: 63px}
+
+.contact-me form label {
+    display: block;
+    color: var(--white);
+    text-transform: capitalize;
+    margin-bottom: 12px
+}
+
+.contact-me form label::after {
+    content: " *";
+    color: var(--text-color)
+}
+
+.contact-me form input:not([type="submit"]),
+textarea {
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 12px;
+    background: #4b5456;
+    border: none;
+    caret-color: var(--main-color);
+}
+
+.contact-me form input:not([type="submit"]):focus,
+textarea:focus {outline: none}
+
+
+.contact-me form input[type="submit"] {
+    color: var(--white);
+    background-color: var(--footer-color);
+    border: none;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer
+}
+
+@media (max-width: 767px) {
+    .contact-me .container {display: block}
+}
+
+        /* End Contact Me */
+
+        /* Start Footer  */
+
+footer {
+    padding-top: calc(var(--main-padding) / 2);
+    padding-bottom: calc(var(--main-padding) / 2);
+    background-color: var(--footer-color)
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+footer .container p {
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold
+}
+
+footer .container p a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-delay)
+}
+
+footer .container p a:hover {color: var(--main-color)}
+
+footer .container .icon {
+    display: flex;
+}
+
+footer .container .icon a {
+    display: block;
+    color: var(--footer-color);
+    padding: 5px;
+    border-radius: 50%;
+    background: var(--heading-color);
+    font-size: 20px;
+    line-height: 1;
+    text-decoration: none;
+    transition: var(--transition-delay);
+    margin-left: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+footer .container .icon a:hover {
+    color: var(--white);
+    transform: scale(1.3);
+}
+
+@media (max-width: 767px) {
+    footer .container {
+        display: block;
+        text-align: center;
+    }
+
+    footer .container .icon {
+        margin-top: 15px;
+        justify-content: center
+    }
+}
+        /* End Footer  */
+
+/* ************************************************************
+************************ End Styling **************************
+************************************************************ */
