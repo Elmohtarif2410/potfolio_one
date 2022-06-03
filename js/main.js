@@ -109,6 +109,9 @@ let anmation = document.querySelectorAll(".skills section.progress div span"),
     body = document.querySelector("body");
 
 window.onscroll = function () {
+    // when scroll to window page => remove class click in icon
+    icon.classList.remove("click");
+
     // function button scroll top page
     if (window.scrollY >= 700) {
         topPage.style.opacity = "1";
@@ -154,20 +157,31 @@ window.onscroll = function () {
 ********************* Functionalty for onclick buttons **********************
 ****************************************************************************/
 let icon = document.getElementById("icon"),
+    links = document.querySelectorAll("header nav ul li a"),
     logo = document.querySelector("header .logo"),
     buttonScills = document.querySelector(".skills .container section.content button "),
     bottonLearnMore = document.querySelector(".landing .text button"),
     bottonDownloadResume = document.querySelector(".resume button"),
     portfolioButtonMore = document.querySelector(".portfolio button");
 
+// icon button menue => on click toggle class click 
 icon.onclick = function () {
     icon.classList.toggle("click");
 };
 
+// when clicked to linkes menue => remove class click in icon
+links.forEach(function(el) {
+    el.onclick = function () {
+        icon.classList.remove("click");
+    }
+})
+
+// logo item to on click => #home
 logo.onclick = function () {
     open("#home", "_self");
 };
 
+// top page bottun on click action
 topPage.onclick = function () {
     window.scrollTo({
         top: 0,
@@ -181,18 +195,22 @@ languge.onclick = function () {
     open("arbic.html", "_self")
 }
 
-buttonScills.onclick = function () {
-    open("#contact", "_self");
-}
-
+//  bottun learn more with landing section on click action
 bottonLearnMore.onclick = function () {
     open("#about", "_self");
 }
 
+//  bottun contact me with scils section on click action
+buttonScills.onclick = function () {
+    open("#contact", "_self");
+}
+
+//  bottun Download Resume with resume section on click action
 bottonDownloadResume.onclick = function () {
     open("");
 }
 
+// bottun portfolio  more or less => action
 portfolioButtonMore.onclick = function () {
     if (this.textContent === "more") {
         document.querySelector(".portfolio .projects").style.maxHeight = "unset";

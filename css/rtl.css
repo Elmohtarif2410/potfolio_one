@@ -4,9 +4,11 @@ body {
 }
 
 /* Header */
-header nav i.click + ul {
-    right: auto;
-    left: 0;
+@media (max-width: 991px) { 
+    header nav ul {
+        right: auto;
+        left: 0;
+    }
 }
 
 /* Aboute Me */
