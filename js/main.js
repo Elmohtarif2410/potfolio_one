@@ -122,35 +122,23 @@ window.onscroll = function () {
     }
 
     // Anmiation to Skills section
-    if (body.scrollWidth > 1200) {
-        console.log("test")
-        if (window.scrollY >= 1300) {
-            anmation[0].style.animation = "progress ease-in-out 1.5s running";
-            anmation[1].style.animation = "progress ease-in-out 1.5s running";
-            anmation[2].style.animation = "progress ease-in-out 1.5s running";
-            anmation[3].style.animation = "progress ease-in-out 1.5s running";
-        } 
-    } else if (880 < body.scrollWidth < 1200) {
-        if (window.scrollY >= 1500) {
-            anmation[0].style.animation = "progress ease-in-out 1.5s running";
-            anmation[1].style.animation = "progress ease-in-out 1.5s running";
-            anmation[2].style.animation = "progress ease-in-out 1.5s running";
-            anmation[3].style.animation = "progress ease-in-out 1.5s running";
-        } 
-    } else if (767 < body.scrollWidth < 880) {
-        if (window.scrollY >= 1800) {
-            anmation[0].style.animation = "progress ease-in-out 1.5s running";
-            anmation[1].style.animation = "progress ease-in-out 1.5s running";
-            anmation[2].style.animation = "progress ease-in-out 1.5s running";
-            anmation[3].style.animation = "progress ease-in-out 1.5s running";
-        }
-    } else {
-        anmation[0].style.animation = "progress ease-in-out 1.5s running";
-        anmation[1].style.animation = "progress ease-in-out 1.5s running";
-        anmation[2].style.animation = "progress ease-in-out 1.5s running";
-        anmation[3].style.animation = "progress ease-in-out 1.5s running";
+    let skills = document.querySelector(".skills");
+        skillsHeightPage = skills.offsetTop,
+        skillsHeight = skills.offsetHeight,
+        windowHeight = window.innerHeight,
+        windowScroll = window.scrollY;
+
+    // if window scroll become where end section skills 
+    if (windowScroll > (skillsHeightPage + skillsHeight - windowHeight)) {
+        // looping to progresses anmation
+        anmation.forEach(function (el) {
+            // code css animation
+            el.style.animation = "progress ease-in-out 1.5s running";
+        })
     }
 };
+
+
 
 
 /****************************************************************************
