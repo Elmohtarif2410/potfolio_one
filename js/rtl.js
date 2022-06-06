@@ -40,3 +40,23 @@ testmonialsButton[2].onclick = function () {
     quote.textContent = "القراءة والمطالعة من أهم العادات التي تطور الشخصية وتنمي المعرفة والثقافة، ينبغي على أي أنسان أن يطور من ذاته ويرتقي بأخلاقه لكي يصل بنفسه إلى درجة عالية من الرقي الأنساني، بالأخلاق الحميدة والصفات القوية تسمو الأمم وتتطور يجب علينا التحلي بالأخلاق لكي نسمو لدرجات العزة والكرامة.";
     nameQuote.textContent = "العميل الثالث";
 }
+
+// Functionalty of contact form
+alert = document.createElement("span");
+alertText = document.createTextNode("عذراً ! نموذج الإرسال لا يعمل");
+
+// add text on alert
+alert.appendChild(alertText);
+
+// style alert => css style
+alert.style.cssText = `
+    display: block;
+    background: #cfe2ff;
+    color: #084298;
+    padding: 20px;
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 18px;
+`;
+

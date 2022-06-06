@@ -257,6 +257,44 @@ category[0].onclick = function () {
 }
 
 /****************************************************************************
+*********************** Functionalty of contact form ************************
+****************************************************************************/
+
+// creat alert to form not work with javascript
+let alert = document.createElement("span");
+let alertText = document.createTextNode("sorry! The form is not work");
+
+// add text on alert
+alert.appendChild(alertText);
+
+// style alert => css style
+alert.style.cssText = `
+    display: block;
+    background: #cfe2ff;
+    color: #084298;
+    padding: 20px;
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 18px;
+`;
+
+
+// function to submit form 
+document.forms[0].onsubmit = function (e) {
+    // not submit form becouse not work
+    e.preventDefault();
+    // when on click to contact buttom => add alert in last form
+    this.appendChild(alert);
+    // aftrer 4 secound => delet alert 
+    setTimeout(function () {
+        // deler alert
+        alert.remove();
+    }, 6000)
+}
+
+
+/****************************************************************************
 ****************** Functionalty of open method to projects ******************
 ****************************************************************************/
 project_1.onclick = function () {
